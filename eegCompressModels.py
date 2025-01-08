@@ -1,7 +1,6 @@
-
 import torch
 
-
+#test
 class AE(torch.nn.Module):
 	def __init__(self, inSize, outSize):
 		super().__init__()
