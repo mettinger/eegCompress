@@ -1,0 +1,11 @@
+{"obj": {"type": "AssignString", "path": ["sys", "description"], "value": ""}, "version": 1, "at": 1736438884.7693524}
+{"obj": {"type": "AssignString", "path": ["monitoring", "63c05563", "hostname"], "value": "ip-10-192-15-240"}, "version": 2, "at": 1736438884.7697906}
+{"obj": {"type": "AssignString", "path": ["sys", "hostname"], "value": "ip-10-192-15-240"}, "version": 3, "at": 1736438884.7699175}
+{"obj": {"type": "AssignString", "path": ["monitoring", "63c05563", "pid"], "value": "1438"}, "version": 4, "at": 1736438884.7700913}
+{"obj": {"type": "AssignString", "path": ["monitoring", "63c05563", "tid"], "value": "140584432812672"}, "version": 5, "at": 1736438884.7702596}
+{"obj": {"type": "AssignBool", "path": ["sys", "failed"], "value": false}, "version": 6, "at": 1736438884.7703445}
+{"obj": {"type": "AssignString", "path": ["source_code", "integrations", "neptune-pytorch"], "value": "2.0.0"}, "version": 7, "at": 1736438884.7802215}
+{"obj": {"type": "LogFloats", "path": ["training", "train", "loss"], "values": [{"value": 1.7215055769792542e-10, "step": null, "ts": 1736438944.9468856}]}, "version": 8, "at": 1736438944.9469569}
+{"obj": {"type": "LogFloats", "path": ["training", "train", "loss"], "values": [{"value": 4.380079632326783e-11, "step": null, "ts": 1736438980.0251195}]}, "version": 9, "at": 1736438980.0251837}
+{"obj": {"type": "LogFloats", "path": ["training", "train", "loss"], "values": [{"value": 1.25995558430958e-09, "step": null, "ts": 1736439042.531655}]}, "version": 10, "at": 1736439042.5317235}
+{"obj": {"type": "LogFloats", "path": ["training", "train", "loss"], "values": [{"value": 1.2837673979415598e-10, "step": null, "ts": 1736439107.2804072}]}, "version": 11, "at": 1736439107.2804651}

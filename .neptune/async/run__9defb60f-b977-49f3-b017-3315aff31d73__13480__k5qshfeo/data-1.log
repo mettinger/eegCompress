@@ -1,0 +1,7 @@
+{"obj": {"type": "AssignString", "path": ["sys", "description"], "value": ""}, "version": 1, "at": 1736528772.4556375}
+{"obj": {"type": "AssignString", "path": ["monitoring", "d57e50c5", "hostname"], "value": "ip-10-192-12-177"}, "version": 2, "at": 1736528772.456041}
+{"obj": {"type": "AssignString", "path": ["sys", "hostname"], "value": "ip-10-192-12-177"}, "version": 3, "at": 1736528772.4563477}
+{"obj": {"type": "AssignString", "path": ["monitoring", "d57e50c5", "pid"], "value": "13480"}, "version": 4, "at": 1736528772.4570637}
+{"obj": {"type": "AssignString", "path": ["monitoring", "d57e50c5", "tid"], "value": "139749837230720"}, "version": 5, "at": 1736528772.45737}
+{"obj": {"type": "AssignBool", "path": ["sys", "failed"], "value": false}, "version": 6, "at": 1736528772.4577024}
+{"obj": {"type": "AssignString", "path": ["source_code", "integrations", "neptune-pytorch"], "value": "2.0.0"}, "version": 7, "at": 1736528772.4691584}
