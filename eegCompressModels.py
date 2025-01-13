@@ -1,41 +1,40 @@
 import torch
 import numpy as np
 
-def sizeToLayerList(encoderSizeList, decoderSizeList):
+def sizeToLayerList(encoderSizeList, 
+					decoderSizeList, 
+					encoderActivationList, 
+					decoderActivationList):
 	encoderLayerList = []
 	decoderLayerList = []
 
-	encoderStripBool = encoderSizeList.pop()
 	for i in range(0, len(encoderSizeList) - 1):
-		thisLayer = torch.nn.Linear(encoderSizeList[i], encoderSizeList[i+1])
+		thisLayer = torch.nn.Linear(encoderSizeList[i], encoderSizeList[i + 1])
 		#torch.nn.init.xavier_uniform_(thisLayer.weight) 
 
 		encoderLayerList.append(thisLayer)
-		encoderLayerList.append(torch.nn.ReLU())
+		if encoderActivationList[i]:
+			encoderLayerList.append(torch.nn.ReLU())
 
-	if encoderStripBool:
-		encoderLayerList.pop()
-
-
-	decoderStripBool = decoderSizeList.pop()
-	decoderSizeList = [encoderSizeList[-1]] + decoderSizeList
-	for i in range(0, len(encoderSizeList) - 1):
-		thisLayer = torch.nn.Linear(decoderSizeList[i], decoderSizeList[i+1])
+	#decoderSizeList = [encoderSizeList[-2]] + decoderSizeList
+	for i in range(0, len(decoderSizeList) - 1):
+		thisLayer = torch.nn.Linear(decoderSizeList[i], decoderSizeList[i + 1])
 		#torch.nn.init.xavier_uniform_(thisLayer.weight) 
 
 		decoderLayerList.append(thisLayer)
-		decoderLayerList.append(torch.nn.ReLU())
-
-	if decoderStripBool:
-		decoderLayerList.pop()
+		if decoderActivationList[i]:
+			decoderLayerList.append(torch.nn.ReLU())
 
 	return encoderLayerList, decoderLayerList
 
 class AE(torch.nn.Module):
-	def __init__(self, encoderSizeList, decoderSizeList):
+	def __init__(self, encoderSizeList, decoderSizeList, encoderActivationList, decoderActivationList):
 		super().__init__()
 
-		encoderLayerList, decoderLayerList = sizeToLayerList(encoderSizeList, decoderSizeList)
+		encoderLayerList, decoderLayerList = sizeToLayerList(encoderSizeList, 
+															decoderSizeList, 
+															encoderActivationList, 
+															decoderActivationList)
 
 		self.encoder = torch.nn.Sequential(*encoderLayerList)
 		self.decoder = torch.nn.Sequential(*decoderLayerList)
