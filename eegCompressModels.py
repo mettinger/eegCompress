@@ -11,7 +11,7 @@ def sizeToLayerList(encoderSizeList,
 
 	for i in range(0, len(encoderSizeList) - 1):
 		thisLayer = torch.nn.Linear(encoderSizeList[i], encoderSizeList[i + 1])
-		#torch.nn.init.xavier_uniform_(thisLayer.weight) 
+		torch.nn.init.xavier_uniform_(thisLayer.weight) 
 
 		encoderLayerList.append(thisLayer)
 		if encoderActivationList[i]:
@@ -20,7 +20,7 @@ def sizeToLayerList(encoderSizeList,
 	#decoderSizeList = [encoderSizeList[-2]] + decoderSizeList
 	for i in range(0, len(decoderSizeList) - 1):
 		thisLayer = torch.nn.Linear(decoderSizeList[i], decoderSizeList[i + 1])
-		#torch.nn.init.xavier_uniform_(thisLayer.weight) 
+		torch.nn.init.xavier_uniform_(thisLayer.weight) 
 
 		decoderLayerList.append(thisLayer)
 		if decoderActivationList[i]:
